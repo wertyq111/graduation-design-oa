@@ -26,14 +26,14 @@ class MenuController extends Controller
      * @param Menu $menu
      * @return BaseResource
      * @author zhouxufeng <zxf@netsun.com>
-     * @date 2024/3/18 09:52
+     * @date 2025/01/21 09:52
      */
     public function index(FormRequest $request, Menu $menu)
     {
         // 生成允许过滤字段数组
         $allowedFilters = $request->generateAllowedFilters($menu->getRequestFilters());
 
-        $menus = QueryBuilder::for($menu)
+        $menus = QueryBuilder::for(Menu::class)
             ->allowedFilters($allowedFilters)->orderBy('sort')->get()->toArray();
 
         return new BaseResource($menus);
@@ -45,11 +45,11 @@ class MenuController extends Controller
      * @param Menu $menu
      * @return BaseResource
      * @author zhouxufeng <zxf@netsun.com>
-     * @date 2024/3/18 13:28
+     * @date 2025/01/21 13:28
      */
     public function info(Menu $menu)
     {
-        $menu = QueryBuilder::for($menu)->findOrFail($menu->id);
+        $menu = QueryBuilder::for(Menu::class)->findOrFail($menu->id);
 
         $info = $menu->toArray();
         if($info['pid'] > 0 &&  $menu->children) {
@@ -66,7 +66,7 @@ class MenuController extends Controller
      * @param Menu $menu
      * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
      * @author zhouxufeng <zxf@netsun.com>
-     * @date 2024/3/6 11:02
+     * @date 2025/1/21 14:04
      */
     public function list(FormRequest $request, Menu $menu)
     {
@@ -84,7 +84,7 @@ class MenuController extends Controller
      * @param Menu $menu
      * @return BaseResource
      * @author zhouxufeng <zxf@netsun.com>
-     * @date 2024/3/11 13:07
+     * @date 2025/01/21 13:07
      */
     public function add(MenuRequest $request, Menu $menu)
     {
@@ -201,7 +201,7 @@ class MenuController extends Controller
      * @param FormRequest $request
      * @return BaseResource
      * @author zhouxufeng <zxf@netsun.com>
-     * @date 2024/3/11 13:08
+     * @date 2025/01/21 13:08
      */
     public function edit(Menu $menu, FormRequest $request)
     {
@@ -317,7 +317,7 @@ class MenuController extends Controller
      * @param Menu $menu
      * @return \Illuminate\Http\JsonResponse
      * @author zhouxufeng <zxf@netsun.com>
-     * @date 2024/3/11 13:23
+     * @date 2025/01/21 13:23
      */
     public function delete(Menu $menu)
     {
@@ -332,14 +332,13 @@ class MenuController extends Controller
     /**
      * 获取全部菜单
      *
-     * @param Menu $menu
      * @return BaseResource
      * @author zhouxufeng <zxf@netsun.com>
-     * @date 2024/3/7 14:30
+     * @date 2025/01/21 14:30
      */
-    public function getMenuList(Menu $menu)
+    public function getMenuList()
     {
-        $menus = QueryBuilder::for($menu)
+        $menus = QueryBuilder::for(Menu::class)
             ->where(['pid' => 0])
             ->with(['menuChildren'])
             ->orderBy('sort', 'ASC')

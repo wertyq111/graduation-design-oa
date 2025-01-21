@@ -15,7 +15,7 @@ class MemberRequest extends FormRequest
         switch ($this->method()) {
             case 'POST':
                 $rules = [
-                    'avatar' => new AvatarUrl()
+                    //'avatar' => new AvatarUrl()
                 ];
                 list($class, $method) = explode('@', $this->route()->getActionName());
                 if($method == 'add') {

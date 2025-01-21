@@ -12,7 +12,6 @@ use Illuminate\Http\Request;
 
 class MembersController extends Controller
 {
-
     /**
      * 加载服务
      */
@@ -38,7 +37,7 @@ class MembersController extends Controller
             'includes' => ['user'],
             'allowedFilters' => $allowedFilters
         ];
-        $members = $this->queryBuilder($member, true, $config);
+        $members = $this->queryBuilder(Member::class, true, $config);
 
         $list = MemberResource::collection($members);
         return $list;

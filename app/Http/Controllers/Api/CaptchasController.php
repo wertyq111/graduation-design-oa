@@ -14,7 +14,12 @@ class CaptchasController extends Controller
         $cacheKey =  'captcha_'.$key;
         $phone = $request->phone;
 
+
         $captcha = $captchaBuilder->build();
+        $captcha->setDistortion(false); // 设置是否扭曲
+        $captcha->setMaxFrontLines(3); // 设置背景前面的线条
+        //$captcha->setMaxAngle(10); // 设置最大角度
+        //$captcha->setMaxBehindLines(3); // 设置背景后面的线条
         $expiredAt = now()->addMinutes(2);
         \Cache::put($cacheKey, ['phone' => $phone, 'code' => $captcha->getPhrase()], $expiredAt);
 

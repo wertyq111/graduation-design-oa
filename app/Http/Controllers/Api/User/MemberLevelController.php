@@ -24,7 +24,7 @@ class MemberLevelController extends Controller
         // 生成允许过滤字段数组
         $allowedFilters = $request->generateAllowedFilters($memberLevel->getRequestFilters());
 
-        $memberLevels = QueryBuilder::for($memberLevel)
+        $memberLevels = QueryBuilder::for(MemberLevel::class)
             ->allowedFilters($allowedFilters)->paginate();
 
         return $this->resource($memberLevels, ['time' => true, 'collection' => true]);
@@ -43,7 +43,7 @@ class MemberLevelController extends Controller
         // 生成允许过滤字段数组
         $allowedFilters = $request->generateAllowedFilters($memberLevel->getRequestFilters());
 
-        $memberLevels = QueryBuilder::for($memberLevel)
+        $memberLevels = QueryBuilder::for(MemberLevel::class)
             ->allowedFilters($allowedFilters)->get();
 
         return $this->resource($memberLevels, ['time' => true, 'collection' => true]);

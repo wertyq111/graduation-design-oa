@@ -17,7 +17,7 @@ class RoleController extends Controller
         // 生成允许过滤字段数组
         $allowedFilters = $request->generateAllowedFilters($role->getRequestFilters());
 
-        $roles = QueryBuilder::for($role)
+        $roles = QueryBuilder::for(Role::class)
             ->allowedIncludes('users', 'menus')
             ->allowedFilters($allowedFilters)->paginate();
 
@@ -33,9 +33,9 @@ class RoleController extends Controller
      * @author zhouxufeng <zxf@netsun.com>
      * @date 2024/3/6 11:02
      */
-    public function list(FormRequest $request, Role $role)
+    public function list()
     {
-        $roles = QueryBuilder::for($role)
+        $roles = QueryBuilder::for(Role::class)
             ->paginate();
 
         return BaseResource::collection($roles);
@@ -146,9 +146,9 @@ class RoleController extends Controller
      * @author zhouxufeng <zxf@netsun.com>
      * @date 2024/3/7 14:30
      */
-    public function getRoleList(Role $role)
+    public function getRoleList()
     {
-        $menus = QueryBuilder::for($role)->get()->toArray();
+        $menus = QueryBuilder::for(Role::class)->get()->toArray();
 
         return new BaseResource($menus);
     }

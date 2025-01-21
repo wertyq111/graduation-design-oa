@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\Api\BaseService;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
@@ -11,6 +12,11 @@ class Controller extends BaseController
 {
     // 默认分页条数
     const PER_PAGE = 10;
+
+    /**
+     * @var BaseService
+     */
+    protected $service;
 
     use AuthorizesRequests, ValidatesRequests;
 

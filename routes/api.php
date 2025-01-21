@@ -98,38 +98,38 @@ Route::name('api')->group(function () {
             Route::delete('users/{user}', [UsersController::class, 'delete'])->name('users.delete');
             /** 用户接口结束 */
 
-            /** 会员接口开始 */
-            // 会员列表
+            /** 员工接口开始 */
+            // 员工信息列表
             Route::get('members/index', [MembersController::class, 'index'])->name('members.index')
                 ->middleware('filter.process:' . Member::class);
-            // 会员信息
+            // 员工信息
             Route::get('members/info', [MembersController::class, 'info'])->name('members.info');
-            // 当前会员信息
+            // 当前员工信息
             Route::get('members/user', [MembersController::class, 'user'])->name('members.user');
-            // 添加会员
+            // 添加员工信息
             Route::post('members/add', [MembersController::class, 'add'])->name('members.add');
             // 修改状态
             Route::post('members/status/{member}', [MembersController::class, 'status'])->name('members.status');
-            // 修改会员
+            // 修改员工信息
             Route::post('members/{member}', [MembersController::class, 'edit'])->name('members.edit');
-            // 删除会员
+            // 删除员工信息
             Route::delete('members/{member}', [MembersController::class, 'delete'])->name('members.delete');
 
-            // 会员等级列表
+            // 员工等级列表
             Route::get('member-level/index', [MemberLevelController::class, 'index'])->name('member-level.index')
                 ->middleware('filter.process:' . MemberLevel::class);
-            // 会员等级列表
+            // 员工等级列表
             Route::get('member-level/list', [MemberLevelController::class, 'list'])->name('member-level.list');
-            // 添加会员等级
+            // 添加员工等级
             Route::post('member-level/add', [MemberLevelController::class, 'add'])->name('member-level.add');
             Route::delete('member-level/batchDelete', [MemberLevelController::class, 'batchDelete'])->name('member-level.batchDelete');
             // 修改状态
             Route::post('member-level/status/{memberLevel}', [MemberLevelController::class, 'status'])->name('member-level.status');
-            // 修改会员等级
+            // 修改员工等级
             Route::post('member-level/{memberLevel}', [MemberLevelController::class, 'edit'])->name('member-level.edit');
-            // 删除会员等级
+            // 删除员工等级
             Route::delete('member-level/{memberLevel}', [MemberLevelController::class, 'delete'])->name('member-level.delete');
-            /** 会员接口结束 */
+            /** 员工接口结束 */
 
             /** 角色接口开始 */
             // 获取角色列表

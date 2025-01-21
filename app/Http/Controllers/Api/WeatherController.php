@@ -22,7 +22,7 @@ class WeatherController extends Controller
         $ip = request()->getClientIp();
 
         // 测试 ip
-        if($ip == '192.168.28.59') {
+        if($ip == '172.18.0.1') {
             $ip = '125.118.5.27';
         }
 
