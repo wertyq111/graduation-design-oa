@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Api\User;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Api\Controller;
 use App\Http\Requests\Api\FormRequest;
 use App\Http\Requests\Api\User\MemberRequest;
 use App\Http\Resources\User\MemberResource;
@@ -17,6 +17,7 @@ class MembersController extends Controller
      */
     public function __construct()
     {
+        parent::__construct();
         $this->service = new MemberService();
     }
 

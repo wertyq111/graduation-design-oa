@@ -8,9 +8,7 @@ use App\Models\User\User;
 use App\Http\Controllers\Api\Controller;
 use App\Http\Resources\User\UserResource;
 use App\Http\Requests\Api\User\UserRequest;
-use Illuminate\Auth\AuthenticationException;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Spatie\QueryBuilder\AllowedFilter;
 use Spatie\QueryBuilder\QueryBuilder;
 

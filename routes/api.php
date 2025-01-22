@@ -11,6 +11,7 @@ use App\Http\Controllers\Api\User\MembersController;
 use App\Http\Controllers\Api\User\MemberLevelController;
 use App\Http\Controllers\Api\User\VerificationCodesController;
 use App\Http\Controllers\Api\AuthorizationsController;
+use App\Http\Controllers\Api\Data\CityController;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -170,8 +171,18 @@ Route::name('api')->group(function () {
             Route::delete('menu/{menu}', [MenuController::class, 'delete'])->name('menu.delete');
             /** 菜单接口结束 */
 
+            /** 城市接口开始 */
+            // 列表
+            Route::get('city/index', [CityController::class, 'index'])->name('city.index');
+            // 添加
+            Route::post('city/add', [CityController::class, 'add'])->name('city.add');
+            // 修改
+            Route::post('city/{city}', [CityController::class, 'edit'])->name('city.edit');
+            // 删除
+            Route::delete('city/{city}', [CityController::class, 'delete'])->name('city.delete');
+            /** 城市接口结束 */
+
             /** 上传接口开始 */
-            // 文件上传
             Route::prefix('upload')->group(function () {
                 Route::post('uploadImage', [UploadController::class, 'uploadImage']);
                 Route::post('uploadFile', [UploadController::class, 'uploadFile']);

@@ -1330,10 +1330,9 @@ if (!function_exists('upload_image')) {
         // 文件名称
         $file_name = uniqid() . '.' . $ext;
         // 重命名保存
-        $path = $file->move($file_dir, $file_name);
+        $file->move($file_dir, $file_name);
         // 文件临时路径
         $file_path = str_replace(ATTACHMENT_PATH, '', $file_dir) . '/' . $file_name;
-        dd($path);
 
         // 返回结果
         $result = [

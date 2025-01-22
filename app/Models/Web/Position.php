@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Models\User;
+namespace App\Models\Web;
 
 use App\Models\BaseModel;
+use App\Models\User\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class MemberLevel extends BaseModel
+class Position extends BaseModel
 {
     use HasFactory;
 
@@ -18,6 +19,7 @@ class MemberLevel extends BaseModel
      */
     protected $fillable = [
         'name',
+        'status',
         'sort'
     ];
 

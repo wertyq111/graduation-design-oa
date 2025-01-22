@@ -5,7 +5,7 @@ namespace App\Models\Web;
 use App\Models\BaseModel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class City extends BaseModel
+class Dept extends BaseModel
 {
     use HasFactory;
 
@@ -15,15 +15,13 @@ class City extends BaseModel
      * @var array<int, string>
      */
     protected $fillable = [
-        'pid',
-        'level',
         'name',
-        'citycode',
-        'p_adcode',
-        'adcode',
-        'lng',
-        'lat',
-        'sort'
+        'code',
+        'fullname',
+        'type',
+        'pid',
+        'sort',
+        'note'
     ];
 
     /**
