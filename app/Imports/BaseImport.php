@@ -8,7 +8,7 @@ use Maatwebsite\Excel\Concerns\ToCollection;
 
 /**
  * 导入父类
- * @author vwms@netsun.com
+ * @author zhouxufeng <zxf@netsun.com>
  * @date: 2022/10/30 13:18
  */
 class BaseImport implements ToCollection
@@ -41,7 +41,7 @@ class BaseImport implements ToCollection
      * 导入
      * @param Collection $collection
      * @return void
-     * @author vwms@netsun.com
+     * @author zhouxufeng <zxf@netsun.com>
      * @date: 2022/10/30 13:18
      */
     public function collection(Collection $collection)

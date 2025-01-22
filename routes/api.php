@@ -5,6 +5,7 @@ use App\Http\Controllers\Api\WeatherController;
 use App\Http\Controllers\Api\Admin\RoleController;
 use App\Http\Controllers\Api\CaptchasController;
 use App\Http\Controllers\Api\QiNiuController;
+use App\Http\Controllers\Api\UploadController;
 use App\Http\Controllers\Api\User\UsersController;
 use App\Http\Controllers\Api\User\MembersController;
 use App\Http\Controllers\Api\User\MemberLevelController;
@@ -168,6 +169,14 @@ Route::name('api')->group(function () {
             // 删除菜单
             Route::delete('menu/{menu}', [MenuController::class, 'delete'])->name('menu.delete');
             /** 菜单接口结束 */
+
+            /** 上传接口开始 */
+            // 文件上传
+            Route::prefix('upload')->group(function () {
+                Route::post('uploadImage', [UploadController::class, 'uploadImage']);
+                Route::post('uploadFile', [UploadController::class, 'uploadFile']);
+            });
+            /** 上传接口结束 */
         });
     });
 

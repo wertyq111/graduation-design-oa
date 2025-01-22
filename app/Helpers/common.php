@@ -12,7 +12,7 @@ if (!function_exists('xml2array')) {
      * xml转数组
      * @param $xml string xml文本
      * @return string
-     * @author vwms@netsun.com
+     * @author zhouxufeng <zxf@netsun.com>
      * @date 2019/6/6
      */
     function xml2array($xml)
@@ -40,7 +40,7 @@ if (!function_exists('array2xml')) {
      * @param bool $ignore 是否忽视true或fasle
      * @param int $level 级别(默认：1)
      * @return string 返回结果
-     * @author vwms@netsun.com
+     * @author zhouxufeng <zxf@netsun.com>
      * @date 2019/6/6
      */
     function array2xml($arr, $ignore = true, $level = 1)
@@ -67,7 +67,7 @@ if (!function_exists('array_merge_multiple')) {
      * @param array $array1 数组1
      * @param array $array2 数组2
      * @return array 返回合并后的数组
-     * @author vwms@netsun.com
+     * @author zhouxufeng <zxf@netsun.com>
      * @date 2019/6/6
      */
     function array_merge_multiple($array1, $array2)
@@ -96,7 +96,7 @@ if (!function_exists('array_key_value')) {
      * @param array $arr 数据源
      * @param string $name 字段名
      * @return array 返回结果
-     * @author vwms@netsun.com
+     * @author zhouxufeng <zxf@netsun.com>
      * @date 2019/6/6
      */
     function array_key_value($arr, $name = "")
@@ -120,7 +120,7 @@ if (!function_exists('curl_url')) {
     /**
      * 获取当前访问的完整地址
      * @return string 返回结果
-     * @author vwms@netsun.com
+     * @author zhouxufeng <zxf@netsun.com>
      * @date 2019/6/6
      */
     function curl_url()
@@ -146,7 +146,7 @@ if (!function_exists('curl_get')) {
      * @param $url string 请求地址
      * @param array $data 请求参数
      * @return bool|string 返回结果
-     * @author vwms@netsun.com
+     * @author zhouxufeng <zxf@netsun.com>
      * @date 2019/6/5
      */
     function curl_get($url, $data = [])
@@ -180,7 +180,7 @@ if (!function_exists('curl_post')) {
      * @param $url string 请求地址
      * @param array $data 请求参数
      * @return bool|string 返回结果
-     * @author vwms@netsun.com
+     * @author zhouxufeng <zxf@netsun.com>
      * @date 2019/6/5
      */
     function curl_post($url, $data = [])
@@ -217,7 +217,7 @@ if (!function_exists('curl_request')) {
      * @param string $type 请求类型(默认：post)
      * @param bool $https 是否https请求true或false
      * @return bool|string 返回请求结果
-     * @author vwms@netsun.com
+     * @author zhouxufeng <zxf@netsun.com>
      * @date 2019/6/6
      */
     function curl_request($url, $data = [], $type = 'post', $https = false)
@@ -266,7 +266,7 @@ if (!function_exists('datetime')) {
      * @param $time numeric|string 时间戳
      * @param string $format 输出日期格式
      * @return string 返回格式化的日期
-     * @author vwms@netsun.com
+     * @author zhouxufeng <zxf@netsun.com>
      * @date 2019/5/23
      */
     function datetime($time, $format = 'Y-m-d H:i:s')
@@ -283,7 +283,7 @@ if (!function_exists('data_auth_sign')) {
      * 数据签名认证
      * @param $data  array 数据源
      * @return string
-     * @author vwms@netsun.com
+     * @author zhouxufeng <zxf@netsun.com>
      * @date 2019/6/6
      */
     function data_auth_sign($data)
@@ -308,7 +308,7 @@ if (!function_exists('export_excel')) {
      * @param string $file_name 文件名
      * @param array $title 标题
      * @param array $data 数据源
-     * @author vwms@netsun.com
+     * @author zhouxufeng <zxf@netsun.com>
      * @date 2019/6/6
      */
     function export_excel($file_name, $title = [], $data = [])
@@ -345,7 +345,7 @@ if (!function_exists('ecm_define')) {
      * 定义常量(读取数组或引用文件)
      * @param $value string|array 数据源
      * @return bool
-     * @author vwms@netsun.com
+     * @author zhouxufeng <zxf@netsun.com>
      * @date 2019/6/6
      */
     function ecm_define($value)
@@ -375,7 +375,7 @@ if (!function_exists('format_time')) {
      * 格式化时间段
      * @param int $time 时间戳
      * @return string 输出格式化时间
-     * @author vwms@netsun.com
+     * @author zhouxufeng <zxf@netsun.com>
      * @date 2019/5/23
      */
     function format_time($time)
@@ -407,7 +407,7 @@ if (!function_exists('format_bytes')) {
      * @param int $size 字节大小
      * @param string $delimiter 分隔符
      * @return string 返回结果
-     * @author vwms@netsun.com
+     * @author zhouxufeng <zxf@netsun.com>
      * @date 2019/5/23
      */
     function format_bytes($size, $delimiter = '')
@@ -427,7 +427,7 @@ if (!function_exists('format_yuan')) {
      * 以分为单位的金额转换成元
      * @param int $money 金额
      * @return string 返回格式化的金额
-     * @author vwms@netsun.com
+     * @author zhouxufeng <zxf@netsun.com>
      * @date 2019/5/23
      */
     function format_yuan($money = 0)
@@ -446,7 +446,7 @@ if (!function_exists('format_cent')) {
      * 以元为单位的金额转化成分
      * @param $money int 金额
      * @return string 返回格式化的金额
-     * @author vwms@netsun.com
+     * @author zhouxufeng <zxf@netsun.com>
      * @date 2019/5/23
      */
     function format_cent($money)
@@ -463,7 +463,7 @@ if (!function_exists('format_bank_card')) {
      * @param string $card_no 银行卡号
      * @param bool $is_format 是否格式化
      * @return string 输出结果
-     * @author vwms@netsun.com
+     * @author zhouxufeng <zxf@netsun.com>
      * @date 2019/5/23
      */
     function format_bank_card($card_no, $is_format = true)
@@ -491,7 +491,7 @@ if (!function_exists('format_mobile')) {
      * 格式化手机号码
      * @param string $mobile 手机号码
      * @return string 返回结果
-     * @author vwms@netsun.com
+     * @author zhouxufeng <zxf@netsun.com>
      * @date 2019/5/23
      */
     function format_mobile($mobile)
@@ -506,7 +506,7 @@ if (!function_exists('get_random_code')) {
      * 获取指定位数的随机码
      * @param int $num 随机码长度
      * @return string 返回字符串
-     * @author vwms@netsun.com
+     * @author zhouxufeng <zxf@netsun.com>
      * @date 2019/5/23
      */
     function get_random_code($num = 12)
@@ -530,7 +530,7 @@ if (!function_exists('get_password')) {
      * 获取双MD5加密密码
      * @param string $password 加密字符串
      * @return string 输出MD5加密字符串
-     * @author vwms@netsun.com
+     * @author zhouxufeng <zxf@netsun.com>
      * @date 2019/5/23
      */
     function get_password($password)
@@ -546,7 +546,7 @@ if (!function_exists('get_order_num')) {
      * 生成订单号
      * @param string $prefix 订单前缀(如：JD-)
      * @return string 输出订单号字符串
-     * @author vwms@netsun.com
+     * @author zhouxufeng <zxf@netsun.com>
      * @date 2019/5/23
      */
     function get_order_num($prefix = '')
@@ -565,7 +565,7 @@ if (!function_exists('getter')) {
      * @param string $field 字段名称
      * @param string $default 默认值
      * @return mixed|string 返回结果
-     * @author vwms@netsun.com
+     * @author zhouxufeng <zxf@netsun.com>
      * @date 2019/5/23
      */
     function getter($data, $field, $default = '')
@@ -584,7 +584,7 @@ if (!function_exists('get_image_url')) {
      * 获取图片地址
      * @param $image_url string 图片地址
      * @return string 返回图片网络地址
-     * @author vwms@netsun.com
+     * @author zhouxufeng <zxf@netsun.com>
      * @date 2019/6/6
      */
     function get_image_url($image_url)
@@ -598,7 +598,7 @@ if (!function_exists('get_hash')) {
     /**
      * 获取HASH值
      * @return string 返回hash字符串
-     * @author vwms@netsun.com
+     * @author zhouxufeng <zxf@netsun.com>
      * @date 2019/6/6
      */
     function get_hash()
@@ -616,7 +616,7 @@ if (!function_exists('get_server_ip')) {
     /**
      * 获取服务端IP地址
      * @return string 返回IP地址
-     * @author vwms@netsun.com
+     * @author zhouxufeng <zxf@netsun.com>
      * @date 2019/6/6
      */
     function get_server_ip()
@@ -641,7 +641,7 @@ if (!function_exists('get_client_ip')) {
      * @param int $type 返回类型 0 返回IP地址 1 返回IPV4地址数字
      * @param bool $adv 否进行高级模式获取（有可能被伪装）
      * @return mixed 返回IP
-     * @author vwms@netsun.com
+     * @author zhouxufeng <zxf@netsun.com>
      * @date 2019/5/23
      */
     function get_client_ip($type = 0, $adv = false)
@@ -681,7 +681,7 @@ if (!function_exists('get_guid_v4')) {
      * 获取唯一性GUID
      * @param bool $trim 是否去除{}
      * @return string 返回GUID字符串
-     * @author vwms@netsun.com
+     * @author zhouxufeng <zxf@netsun.com>
      * @date 2019/6/6
      */
     function get_guid_v4($trim = true)
@@ -721,7 +721,7 @@ if (!function_exists('is_email')) {
      * 判断是否为邮箱
      * @param string $str 邮箱
      * @return false 返回结果true或false
-     * @author vwms@netsun.com
+     * @author zhouxufeng <zxf@netsun.com>
      * @date 2019/5/23
      */
     function is_email($str)
@@ -737,7 +737,7 @@ if (!function_exists('is_mobile')) {
      * 判断是否为手机号
      * @param string $num 手机号码
      * @return false 返回结果true或false
-     * @author vwms@netsun.com
+     * @author zhouxufeng <zxf@netsun.com>
      * @date 2019/5/23
      */
     function is_mobile($num)
@@ -753,7 +753,7 @@ if (!function_exists('is_zipcode')) {
      * 验证邮编是否正确
      * @param string $code 邮编
      * @return false 返回结果true或false
-     * @author vwms@netsun.com
+     * @author zhouxufeng <zxf@netsun.com>
      * @date 2019/5/23
      */
     function is_zipcode($code)
@@ -769,7 +769,7 @@ if (!function_exists('is_idcard')) {
      * 验证身份证是否正确
      * @param string $id_no 身份证号
      * @return bool 返回结果true或false
-     * @author vwms@netsun.com
+     * @author zhouxufeng <zxf@netsun.com>
      * @date 2019/5/23
      */
     function is_idcard($id_no)
@@ -828,7 +828,7 @@ if (!function_exists('is_empty')) {
      * 判断是否为空
      * @param $value mixed 参数值
      * @return bool 返回结果true或false
-     * @author vwms@netsun.com
+     * @author zhouxufeng <zxf@netsun.com>
      * @date 2019/6/5
      */
     function is_empty($value)
@@ -860,7 +860,7 @@ if (!function_exists('mkdirs')) {
      * @param string $dir 需要创建的目录路径
      * @param int $mode 权限值
      * @return bool 返回结果true或false
-     * @author vwms@netsun.com
+     * @author zhouxufeng <zxf@netsun.com>
      * @date 2019/6/6
      */
     function mkdirs($dir, $mode = 0777)
@@ -882,7 +882,7 @@ if (!function_exists('rmdirs')) {
      * @param string $dir 文件夹路径
      * @param bool $rmself 是否删除本身true或false
      * @return bool 返回删除结果
-     * @author vwms@netsun.com
+     * @author zhouxufeng <zxf@netsun.com>
      * @date 2019/6/6
      */
     function rmdirs($dir, $rmself = true)
@@ -913,7 +913,7 @@ if (!function_exists('copydirs')) {
      * 复制文件夹
      * @param string $source 原文件夹路径
      * @param string $dest 目的文件夹路径
-     * @author vwms@netsun.com
+     * @author zhouxufeng <zxf@netsun.com>
      * @date 2019/6/6
      */
     function copydirs($source, $dest)
@@ -947,7 +947,7 @@ if (!function_exists('message')) {
      * @param array $data 结果数据
      * @param int $code 编码
      * @return array 返回结果
-     * @author vwms@netsun.com
+     * @author zhouxufeng <zxf@netsun.com>
      * @date 2019/5/28
      */
     function message($msg = "操作成功", $success = true, $data = [], $code = 0)
@@ -968,7 +968,7 @@ if (!function_exists('num2rmb')) {
      * 数字金额转大写
      * @param float $num 金额
      * @return string 返回大写金额
-     * @author vwms@netsun.com
+     * @author zhouxufeng <zxf@netsun.com>
      * @date 2019/6/6
      */
     function num2rmb($num)
@@ -1028,7 +1028,7 @@ if (!function_exists('object_array')) {
      * 对象转数组
      * @param $object mixed 对象
      * @return mixed 返回结果
-     * @author vwms@netsun.com
+     * @author zhouxufeng <zxf@netsun.com>
      * @date 2019/5/23
      */
     function object_array($object)
@@ -1044,7 +1044,7 @@ if (!function_exists('parse_attr')) {
      * 配置值解析成数组
      * @param string $value 参数值
      * @return array 返回结果
-     * @author vwms@netsun.com
+     * @author zhouxufeng <zxf@netsun.com>
      * @date 2019/6/6
      */
     function parse_attr($value = '')
@@ -1073,7 +1073,7 @@ if (!function_exists('strip_html_tags')) {
      * @param string $str 字符串
      * @param int $length 长度
      * @return string 返回结果
-     * @author vwms@netsun.com
+     * @author zhouxufeng <zxf@netsun.com>
      * @date 2019/5/23
      */
     function strip_html_tags($str, $length = 0)
@@ -1107,7 +1107,7 @@ if (!function_exists('sub_str')) {
      * @param bool $suffix 截断显示字符
      * @param string $charset 编码格式
      * @return string 返回结果
-     * @author vwms@netsun.com
+     * @author zhouxufeng <zxf@netsun.com>
      * @date 2019/5/23
      */
     function sub_str($str, $start = 0, $length = 10, $suffix = true, $charset = "utf-8")
@@ -1138,7 +1138,7 @@ if (!function_exists('save_image')) {
      * @param string $img_url 网络图片地址
      * @param string $save_dir 图片保存目录
      * @return string 返回路径
-     * @author vwms@netsun.com
+     * @author zhouxufeng <zxf@netsun.com>
      * @date 2019/5/23
      */
     function save_image($img_url, $save_dir = '/')
@@ -1178,7 +1178,7 @@ if (!function_exists('create_image_path')) {
      * @param string $image_ext 图片后缀
      * @param string $image_root 图片存储根目录路径
      * @return string 返回文件目录
-     * @author vwms@netsun.com
+     * @author zhouxufeng <zxf@netsun.com>
      * @date 2019/5/23
      */
     function create_image_path($save_dir = "", $image_ext = "", $image_root = IMG_PATH)
@@ -1209,7 +1209,7 @@ if (!function_exists('save_remote_image')) {
      * @param string $img_url 网络图片地址
      * @param string $save_dir 保存目录
      * @return bool|string 图片路径
-     * @author vwms@netsun.com
+     * @author zhouxufeng <zxf@netsun.com>
      * @date 2019/5/23
      */
     function save_remote_image($img_url, $save_dir = '/')
@@ -1241,7 +1241,7 @@ if (!function_exists('save_image_content')) {
      * @param bool $title 标题
      * @param string $path 图片存储路径
      * @return bool 返回结果
-     * @author vwms@netsun.com
+     * @author zhouxufeng <zxf@netsun.com>
      * @date 2020-04-21
      */
     function save_image_content(&$content, $title = false, $path = 'article')
@@ -1281,7 +1281,7 @@ if (!function_exists('upload_image')) {
      * @param $request Request 网络请求
      * @param string $form_name 文件表单名
      * @return array 返回结果
-     * @author vwms@netsun.com
+     * @author zhouxufeng <zxf@netsun.com>
      * @date 2019/5/23
      */
     function upload_image($request, $form_name = 'file')
@@ -1333,6 +1333,7 @@ if (!function_exists('upload_image')) {
         $path = $file->move($file_dir, $file_name);
         // 文件临时路径
         $file_path = str_replace(ATTACHMENT_PATH, '', $file_dir) . '/' . $file_name;
+        dd($path);
 
         // 返回结果
         $result = [
@@ -1355,7 +1356,7 @@ if (!function_exists('upload_file')) {
      * @param $request Request 网络请求
      * @param string $form_name 文件表单名
      * @return array 返回结果
-     * @author vwms@netsun.com
+     * @author zhouxufeng <zxf@netsun.com>
      * @date 2019/5/23
      */
     function upload_file($request, $form_name = 'file')
@@ -1431,7 +1432,7 @@ if (!function_exists('widget')) {
      * @param $widgetName string 组件名称
      * @return bool|mixed
      * @throws BindingResolutionException
-     * @author vwms@netsun.com
+     * @author zhouxufeng <zxf@netsun.com>
      * @date 2019/5/23
      */
     function widget($widgetName)

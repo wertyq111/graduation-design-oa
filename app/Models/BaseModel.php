@@ -39,7 +39,7 @@ class BaseModel extends Authenticatable
     /**
      * 获取当前时间
      * @return int 时间戳
-     * @author vwms@netsun.com
+     * @author zhouxufeng <zxf@netsun.com>
      * @date 2019/5/30
      */
     public function freshTimestamp()
@@ -51,7 +51,7 @@ class BaseModel extends Authenticatable
      * 避免转换时间戳为时间字符串
      * @param mixed $value 时间
      * @return mixed|string|null
-     * @author vwms@netsun.com
+     * @author zhouxufeng <zxf@netsun.com>
      * @date 2019/5/30
      */
     public function fromDateTime($value)
@@ -62,7 +62,7 @@ class BaseModel extends Authenticatable
     /**
      * 获取时间戳格式
      * @return string 时间戳字符串格式
-     * @author vwms@netsun.com
+     * @author zhouxufeng <zxf@netsun.com>
      * @date 2019/5/30
      */
     public function getDateFormat()

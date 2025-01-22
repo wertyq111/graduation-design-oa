@@ -8,7 +8,7 @@ use function request;
 
 /**
  * 基类控制器
- * @author vwms@netsun.com
+ * @author zhouxufeng <zxf@netsun.com>
  * @date: 2022/10/30 10:30
  */
 class BaseController extends Controller
@@ -16,7 +16,7 @@ class BaseController extends Controller
 
     /**
      * 构造函数
-     * @author vwms@netsun.com
+     * @author zhouxufeng <zxf@netsun.com>
      * @date: 2022/10/30 10:30
      */
     public function __construct()
@@ -31,7 +31,7 @@ class BaseController extends Controller
     /**
      * 初始化请求配置
      * @since 2020/11/10
-     * @author vwms@netsun.com
+     * @author zhouxufeng <zxf@netsun.com>
      */
     private function initRequestConfig()
     {
@@ -59,7 +59,7 @@ class BaseController extends Controller
 
     /**
      * 初始化系统常量
-     * @author vwms@netsun.com
+     * @author zhouxufeng <zxf@netsun.com>
      * @since 2020/11/10
      */
     private function initSystemConst()
