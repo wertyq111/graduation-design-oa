@@ -17,6 +17,8 @@ class Member extends BaseModel
     protected $fillable = [
         'user_id',
         'member_level',
+        'dept_id',
+        'position_id',
         'realname',
         'nickname',
         'gender',

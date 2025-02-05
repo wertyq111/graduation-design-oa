@@ -11,23 +11,27 @@ use Spatie\QueryBuilder\QueryBuilder;
 class PositionController extends Controller
 {
     /**
-     * 列表 - 不分页
+     * 列表
      *
      * @param FormRequest $request
      * @param Position $position
-     * @return BaseResource
+     * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
      * @author zhouxufeng <zxf@netsun.com>
-     * @date 2025/01/21 09:52
+     * @date 2025/2/5 16:04
      */
     public function index(FormRequest $request, Position $position)
     {
         // 生成允许过滤字段数组
         $allowedFilters = $request->generateAllowedFilters($position->getRequestFilters());
 
-        $positions = QueryBuilder::for(Position::class)
-            ->allowedFilters($allowedFilters)->orderBy('sort')->get()->toArray();
+        $config = [
+            'allowedFilters' => $allowedFilters,
+            'orderBy' => [['sort' => 'asc']]
+        ];
+        $positions = $this->queryBuilder(Position::class, true, $config);
 
-        return new BaseResource($positions);
+        $list = BaseResource::collection($positions);
+        return $list;
     }
 
     /**

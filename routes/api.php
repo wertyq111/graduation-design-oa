@@ -13,6 +13,7 @@ use App\Http\Controllers\Api\User\VerificationCodesController;
 use App\Http\Controllers\Api\AuthorizationsController;
 use App\Http\Controllers\Api\Data\CityController;
 use App\Http\Controllers\Api\Admin\DeptController;
+use App\Http\Controllers\Api\Admin\PositionController;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -21,6 +22,7 @@ use App\Models\User\MemberLevel;
 use App\Models\Permission\Role;
 use App\Models\Permission\Menu;
 use App\Models\Web\Dept;
+use App\Models\Web\Position;
 use App\Models\Web\City;
 
 
@@ -189,6 +191,22 @@ Route::name('api')->group(function () {
             // 删除
             Route::delete('dept/{dept}', [DeptController::class, 'delete'])->name('dept.delete');
             /** 部门接口结束 */
+
+            /** 岗位接口开始 */
+            // 列表
+            Route::get('position/index', [PositionController::class, 'index'])->name('position.index')
+                ->middleware('filter.process:' . Position::class);
+            // 获取全部列表
+            Route::get('position/getPositionList', [PositionController::class, 'getPositionList'])->name('position.getPositionList');
+            // 详情
+            Route::get('position/info/{position}', [PositionController::class, 'info'])->name('position.info');
+            // 添加
+            Route::post('position/add', [PositionController::class, 'add'])->name('position.add');
+            // 修改
+            Route::post('position/{position}', [PositionController::class, 'edit'])->name('position.edit');
+            // 删除
+            Route::delete('position/{position}', [PositionController::class, 'delete'])->name('position.delete');
+            /** 岗位接口结束 */
 
             /** 城市接口开始 */
             // 列表

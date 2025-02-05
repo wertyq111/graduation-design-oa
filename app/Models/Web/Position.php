@@ -10,8 +10,6 @@ class Position extends BaseModel
 {
     use HasFactory;
 
-    protected $table = "member_level";
-
     /**
      * The attributes that are mass assignable.
      *
