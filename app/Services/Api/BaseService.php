@@ -11,16 +11,22 @@ class BaseService
      * 批量转换下级子类键名
      *
      * @param $data
+     * @param $childName
      * @return mixed
      * @author zhouxufeng <zxf@netsun.com>
-     * @date 2024/3/18 13:07
+     * @date 2025/1/23 13:39
      */
-    public function convertChildrenKey($data)
+    public function convertChildrenKey($data, $childName = null)
     {
+        $customChildren = 'children';
+        if($childName != null) {
+            $customChildren = $childName. "Children";
+        }
+
         foreach($data as $value) {
-            $value->children = $value->menuChildren;
+            $value->children = $value->$customChildren;
             if($value->children) {
-                $value->children = $this->convertChildrenKey($value->children)->toArray();
+                $value->children = $this->convertChildrenKey($value->children, $childName)->toArray();
             } else {
                 $value->children = [];
             }

@@ -3,6 +3,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\Api\BaseService;
 use Illuminate\Support\Facades\DB;
 use function request;
 
@@ -13,7 +14,6 @@ use function request;
  */
 class BaseController extends Controller
 {
-
     /**
      * 构造函数
      * @author zhouxufeng <zxf@netsun.com>

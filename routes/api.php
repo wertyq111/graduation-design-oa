@@ -12,6 +12,7 @@ use App\Http\Controllers\Api\User\MemberLevelController;
 use App\Http\Controllers\Api\User\VerificationCodesController;
 use App\Http\Controllers\Api\AuthorizationsController;
 use App\Http\Controllers\Api\Data\CityController;
+use App\Http\Controllers\Api\Admin\DeptController;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -19,6 +20,8 @@ use App\Models\User\Member;
 use App\Models\User\MemberLevel;
 use App\Models\Permission\Role;
 use App\Models\Permission\Menu;
+use App\Models\Web\Dept;
+use App\Models\Web\City;
 
 
 /*
@@ -171,9 +174,26 @@ Route::name('api')->group(function () {
             Route::delete('menu/{menu}', [MenuController::class, 'delete'])->name('menu.delete');
             /** 菜单接口结束 */
 
+            /** 部门接口开始 */
+            // 列表
+            Route::get('dept/index', [DeptController::class, 'index'])->name('dept.index')
+                ->middleware('filter.process:' . Dept::class);
+            // 获取全部列表
+            Route::get('dept/getDeptList', [DeptController::class, 'getDeptList'])->name('dept.getDeptList');
+            // 详情
+            Route::get('dept/info/{dept}', [DeptController::class, 'info'])->name('dept.info');
+            // 添加
+            Route::post('dept/add', [DeptController::class, 'add'])->name('dept.add');
+            // 修改
+            Route::post('dept/{dept}', [DeptController::class, 'edit'])->name('dept.edit');
+            // 删除
+            Route::delete('dept/{dept}', [DeptController::class, 'delete'])->name('dept.delete');
+            /** 部门接口结束 */
+
             /** 城市接口开始 */
             // 列表
-            Route::get('city/index', [CityController::class, 'index'])->name('city.index');
+            Route::get('city/index', [CityController::class, 'index'])->name('city.index')
+                ->middleware('filter.process:' . City::class);
             // 添加
             Route::post('city/add', [CityController::class, 'add'])->name('city.add');
             // 修改

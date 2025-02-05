@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\BaseController;
+use App\Services\Api\BaseService;
 use App\Services\Api\QiniuService;
 
 class Controller extends BaseController
@@ -12,10 +13,16 @@ class Controller extends BaseController
      */
     protected $qiniuService;
 
+    /**
+     * @var BaseService
+     */
+    protected $service;
+
     public function __construct()
     {
         parent::__construct();
         $this->qiniuService = new QiniuService();
+        $this->service = new BaseService();
     }
 
     /**
